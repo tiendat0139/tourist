@@ -1,0 +1,104 @@
+.overlay {
+    background-image: url('../../../img/about/aboutbg.jpg');
+    height: 100vh;
+    background-size: cover;
+
+    .header {
+        font-size: 64px;
+        color: #fff;
+        font-weight: 700;
+    }
+}
+
+.about-us {
+    margin: 100px 0;
+    background-color: #f8faff;
+
+    .image {
+        height: 390px;
+        background-image: url('../../../img/about/company.webp');
+        background-size: cover;
+    }
+
+    .navbar {
+        margin: 40px 0 40px 20px;
+
+        .navbar-item {
+            font-size: 20px;
+            font-weight: 400;
+            color: #b3b3b3;
+            padding: 10px 0;
+            text-align: center;
+            border-radius: 40px;
+            transition: 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .active {
+            color: #fff;
+            background-color: #78d5ef;
+        }
+    }
+
+    .desc {
+        margin-left: 20px;
+        line-height: 1.8;
+        display: none;
+
+        h2 {
+            font-weight: 500;
+            font-size: 28px;
+        }
+    }
+
+    .active-desc {
+        display: block;
+    }
+}
+
+.sec-question {
+    background-color: #f8faff;
+
+    h2 {
+        font-weight: 300;
+
+        strong {
+            font-weight: 600;
+        }
+    }
+
+    .question {
+        margin: 100px 0;
+        .item,
+        .item-aws {
+            background-color: #fff;
+            font-size: 22px;
+            padding: 10px 20px;
+            margin-top: 6px;
+            border: 1px solid rgba($color: #000000, $alpha: 0.2);
+
+            i {
+                font-size: 20px;
+                color: rgb(4, 184, 4);
+                float: right;
+                padding-top: 8px;
+                cursor: pointer;
+                display: none;
+            }
+            .show-icon{
+                display: block;
+            }
+        }
+
+        .item-aws {
+            margin-top: 0;
+            padding-bottom: 40px;
+            font-size: 16px;
+            color: #666;
+            display: none;
+        }
+        .open {
+            display: block;
+        }
+    }
+}

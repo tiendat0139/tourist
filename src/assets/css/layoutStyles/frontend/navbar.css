@@ -1,0 +1,42 @@
+@media (min-width: 1200px){
+    .container{
+        max-width: 1140px !important;
+    }
+}
+.frontend-navbar{
+    position: absolute !important;
+    top: 8%;
+    right: 0;
+    left: 0;
+    z-index: 3;
+    background-color: transparent !important;
+    
+}
+.frontend-navbar .nav-addlist{
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 0.5rem 20px 0.5rem 20px !important;
+    border-radius: 30px;
+}
+/* khi add scrolled thi se dung keyframe de hien navbav */
+.frontend-navbar.scrolled{
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #fff !important;
+    box-shadow: 0 0 10px 0 rgab(0,0,0,0.1);
+    transition: 1s all ease-in;
+    animation: showNavbar 1s ease-out;
+}
+.frontend-navbar.scrolled .nav-addlist{
+    background-color: #f85959;
+    color: #fff !important;
+}
+@keyframes showNavbar{
+    from{
+        top: -100px;
+    }
+    to{
+        top: 0
+    }
+}
