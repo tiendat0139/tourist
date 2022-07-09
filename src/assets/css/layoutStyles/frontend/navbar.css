@@ -12,9 +12,9 @@
     background-color: transparent !important;
     
 }
-.frontend-navbar .nav-addlist{
+.frontend-navbar .nav-login{
     border: 1px solid rgba(255,255,255,0.4);
-    padding: 0.5rem 20px 0.5rem 20px !important;
+    padding: 0.3rem 20px 0.3rem 20px !important;
     border-radius: 30px;
 }
 /* khi add scrolled thi se dung keyframe de hien navbav */
@@ -28,10 +28,29 @@
     transition: 1s all ease-in;
     animation: showNavbar 1s ease-out;
 }
-.frontend-navbar.scrolled .nav-addlist{
+.nav-user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    color: rgba(255, 255, 255,0.4);
+    position: relative;
+}
+.nav-user:hover .drop-down{
+    display: block;
+}
+.down-icon{
+    font-size: 12px;
+    margin-left: 4px;
+}
+.frontend-navbar.scrolled .nav-login{
     background-color: #f85959;
     color: #fff !important;
 }
+.frontend-navbar.scrolled .nav-user{
+    color: #f85959;
+}
+
 @keyframes showNavbar{
     from{
         top: -100px;
@@ -39,4 +58,64 @@
     to{
         top: 0
     }
+}
+
+/* Drop down  */
+.drop-down{
+    /* width: 400px; */
+    border: 1px solid rgba(255, 255, 255,0.4);
+    border-radius: 10px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    right: 6px;
+    display: none;
+}
+.drop-down_list{
+    list-style: none;
+    padding: 0 8px;
+    margin: 0;
+}
+.drop-down_item{
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.drop-down_item:nth-child(3){
+    border: none;
+    border-radius: 8px;
+    background-color: #f85959;
+    margin: 10px 0;
+    text-align: center;
+    
+}
+.drop-down_item:nth-child(3) a{
+    color: #fff;
+}
+.drop-down_item:nth-child(3) a:hover{
+    color: #fff;
+    opacity: 0.8;
+}
+.drop-down_item a{
+    color: #000;
+    text-decoration: none;
+    display: block;
+    min-width: 100px;
+}
+.drop-down_item a:hover{
+    color: rgba(0, 0, 0, 0.6);
+}
+.drop-down::after{
+    content: "";
+    border-style: solid;
+    border-width: 8px 8px;
+    border-color: transparent transparent #fff transparent;
+    position: absolute;
+    top: -16px;
+    right: 16px;
+}
+.drop-down::before{
+    content: "";
+    width: 40px;
+    height: 10px;
 }

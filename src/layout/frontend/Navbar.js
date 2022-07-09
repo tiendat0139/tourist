@@ -1,10 +1,14 @@
 import "~/assets/css/layoutStyles/frontend/navbar.css"
 
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const Navbar = function(){
+    const navigate = useNavigate();
     const [show, setShow] = useState(false)
+
     const handleScroll = (e) => {
         if(window.scrollY <= 200){
             setShow(false)
@@ -12,6 +16,7 @@ const Navbar = function(){
             setShow(true)
         }
     }
+
     const hanleClick = (e) => {
         const ulElement = e.target.closest('ul').childNodes;
         //ulElement lap qua cac the li, element.childrent la the a
@@ -27,7 +32,52 @@ const Navbar = function(){
         }
     },[])
 
-    // 
+    // Sign out
+    const handleSignout = () => {
+        axios.post('/api/logout').then(res => {
+            if(res.data.status === 200){
+                localStorage.removeItem('auth_token')
+                localStorage.removeItem('auth_name')
+                Swal.fire({
+                    title: 'Good job!',
+                    text: res.data.message,
+                    icon: "success"
+                })
+                navigate('/')
+            }
+        })
+    }
+    var AuthButtons = ''
+    if(!localStorage.getItem('auth_name')){
+        AuthButtons = (
+            <React.Fragment>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/login">Sign in</Link>
+                </li>
+
+                <li className="nav-item">
+                    <Link className="nav-link nav-login" to="/register">
+                        <span>Sign up</span>
+                    </Link>
+                </li>
+            </React.Fragment>
+        )
+    } else {
+        AuthButtons = (
+            <li className="nav-item nav-user">
+                <div className="user-icon"><i className="fa-solid fa-user"></i></div>
+                <div className="down-icon"><i className="fa-solid fa-angle-down"></i></div>
+                <div className="drop-down">
+                    <ul className="drop-down_list">
+                        <li className="drop-down_item"><Link to={'#'}>Profile</Link></li>
+                        <li className="drop-down_item"><Link to={'#'} onClick={handleSignout}>Sign out</Link></li>
+                        <li className="drop-down_item"><Link to={'#'}>Company</Link></li>
+                    </ul>
+                </div>
+            </li>
+        )
+    }
+    
     return(
         <nav className ={`frontend-navbar navbar navbar-expand-lg ${show? 'navbar-light scrolled' : 'navbar-dark'}`}>
             <div className="container">
@@ -36,28 +86,21 @@ const Navbar = function(){
                 <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <Link className="nav-link active" aria-current="page" to="/" onClick={hanleClick}>Home</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/about" onClick={hanleClick}>About</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/hotels" onClick={hanleClick}>Hotels</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="#" onClick={hanleClick}>Tour</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="#" onClick={hanleClick}>Contact</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link nav-addlist" to="#">
-                            <span>Add Listing</span>
-                        </Link>
-                    </li>
-                </ul>
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <Link className="nav-link active" aria-current="page" to="/" onClick={hanleClick}>Home</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/about" onClick={hanleClick}>About</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/hotels" onClick={hanleClick}>Hotels</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="#" onClick={hanleClick}>Tour</Link>
+                        </li>
+                        {AuthButtons}
+                    </ul>
                 </div>
             </div>
     </nav>

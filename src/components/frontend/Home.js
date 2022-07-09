@@ -74,7 +74,7 @@ const Home = function(){
                                 <form >
                                     <div className="field d-flex">
                                         <div className="text-field one-third">
-                                            <input type="text"  placeholder="Ex: food, service,..."></input>
+                                            <input type="text"  placeholder="Ex: Hotel, service,..."></input>
                                         </div>
                                         <div className="select-field one-third">
                                             <select type="text"  placeholder="Where" defaultValue={0}>
@@ -91,7 +91,7 @@ const Home = function(){
                             <p style={{fontSize:"20px", fontWeight:"200"}}>Or browse the highlights</p>
                             <p className="browse d-md-flex">
                                 <span className="browse-item d-flex justify-content-md-center align-items-md-center">
-                                    <Link to="#" className="d-flex"><i className="fa-solid fa-utensils"></i> Restaurant </Link>
+                                    <Link to="#"><i className="fa-solid fa-utensils"></i> Restaurant </Link>
                                 </span>
                                 <span className="browse-item d-flex justify-content-md-center align-items-md-center">
                                     <Link to="#"><i className="fa-solid fa-hotel"></i> Hotel </Link>
