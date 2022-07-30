@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import CountUp from 'react-countup';
 
-import "~/assets/css/componentStyles/frontend/home.css"
+import "~/assets/css/component/frontend/home.css"
 import { ReactComponent as GuaranteeIcon  } from "~/assets/img/guarantee.svg"
 import { ReactComponent as Detective  } from "~/assets/img/detective.svg"
 import { ReactComponent as Heart  } from "~/assets/img/heart.svg"

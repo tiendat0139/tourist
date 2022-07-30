@@ -1,0 +1,39 @@
+.home{
+    padding: 20px;
+    box-sizing: border-box;
+    .total{
+        width: 100%;
+        .item{
+            border-radius: 10px;
+            box-shadow: 0 0 16px rgba($color: #000000, $alpha: 0.2);
+            padding: 30px 20px;
+            .item-header{
+                color: #a4a4a4;
+                font-weight: 500;
+            }
+            .item-data{
+                margin-top: 10px;
+                font-size: 20px;
+                font-weight: 700;
+            }
+            .item-icon{
+                padding: 12px 10px;
+                border-radius: 50%;
+                box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.2);
+                background-color: #f7f7f7;
+                text-align: center;
+                ion-icon{
+                    font-size: 34px;
+                    color: #4faee8;
+                    padding: 0;
+                }
+            }
+        }
+    }
+    .statis{
+        margin-top: 30px;
+        margin-right: 24px;
+        border-radius: 10px;
+        box-shadow: 0 0 16px rgba($color: #000000, $alpha: 0.2);
+    }
+}

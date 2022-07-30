@@ -1,0 +1,42 @@
+$primary-color: #f85959;
+
+//Customize SCSS
+
+// @import "bootstrap/scss/functions";
+// @import "bootstrap/scss/variables";
+
+// $form-range-track-bg : $primary-color;
+// $form-range-track-border-radius: 0;
+// $form-range-track-height : 0.25rem;
+// $form-range-thumb-focus-box-shadow : none;
+// $form-range-thumb-active-bg : $primary-color;
+// $form-range-thumb-bg : $primary-color;
+
+// @import "bootstrap/scss/bootstrap";
+
+.overlay {
+    height: 100vh;
+    background-image: url('../../../../img/hotels/hotelbg.jpg');
+    background-size: cover;
+
+    h2 {
+        font-size: 64px;
+        color: #fff;
+        font-weight: 700;
+    }
+}
+.banner{
+    margin-top: 60px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+    h6{
+        color: #999;
+    }
+    p{
+        font-weight: 500;
+    }  
+    .banner-img{
+        width: 70%;
+    }
+
+}

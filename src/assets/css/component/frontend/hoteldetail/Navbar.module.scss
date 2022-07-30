@@ -1,0 +1,125 @@
+@keyframes slide-in {
+    from {
+        padding-bottom: 0;
+    }
+
+    to {
+        padding-bottom: 20px;
+    }
+}
+
+@mixin dropdown {
+    background-color: #fff;
+    border-radius: 6px;
+    border-top: 6px solid rgb(83, 146, 249);
+    padding: 20px;
+    position: absolute;
+    top: calc(100% + 10px);
+    animation: slide-in 0.2s ease-in-out forwards;
+    overflow: hidden;
+    display: none;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+    background-color: #20274d;
+    .desti,
+    .check-box,
+    .room-opt {
+        height: 50px;
+        line-height: 50px;
+        padding: 0 20px;
+        border-radius: 6px;
+        background-color: #fff;
+        cursor: pointer;
+    }
+
+    .desti {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .check-box {   
+        .check-in {
+            position: relative;
+            &::after {
+                content: "";
+                width: 300px;
+                height: 20px;
+                background-color: transparent;
+                position: absolute;
+                left: 0;
+                top: 40px;
+            }
+            .drop-down {
+                @include dropdown;
+                right: -10px;
+            }
+
+            &:hover .drop-down {
+                display: block;
+            }
+        }
+
+        .check-out {
+            position: relative;
+            &::after {
+                content: "";
+                width: 300px;
+                height: 20px;
+                background-color: transparent;
+                position: absolute;
+                left: 0;
+                top: 40px;
+            }
+            .drop-down {
+                @include dropdown;
+                right: -40px;
+
+            }
+
+            &:hover .drop-down {
+                display: block;
+            }
+        }
+    }
+
+    .room-opt {
+        position: relative;
+
+        &:hover .drop-down {
+            display: block;
+        }
+
+        .drop-down {
+            @include dropdown;
+            width: 350px;
+
+            li {
+                font-size: 18px;
+                color: rgb(83, 146, 249);
+                font-weight: 600;
+
+                small {
+                    font-size: 14px;
+                    color: #999;
+                    margin-left: 4px;
+                }
+            }
+
+        }
+        &::after {
+            content: "";
+            width: 300px;
+            height: 20px;
+            background-color: transparent;
+            position: absolute;
+            right: -40px;
+            top: 40px;
+        }
+    }
+}

@@ -1,8 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
-import FrontendLayout from "~/layout/frontend/FrontendLayout.js"
+import FrontendLayout from "~/layout/FrontendLayout"
 import Login from './components/frontend/auth/Login';
 import Register from './components/frontend/auth/Register';
+import Company from './components/Company'
+import CompanyPrivateRoute from './routes/CompanyPrivateRoute';
+import HotelDetail from './components/frontend/HotelDetail';
+
 import axios from "axios"
 axios.defaults.baseURL = 'http://localhost:8000';
 axios.defaults.headers.post['Accept'] = 'application/json';
@@ -25,6 +29,9 @@ function App() {
           <Route path='/*' element={<FrontendLayout />}></Route>
           <Route path='/register' element={<Register />}></Route>
           <Route path='/login' element={<Login/>}></Route>
+          {/* <Route path='/company/*'  element={<CompanyPrivateRoute > <Company/> </CompanyPrivateRoute>}/> */}
+          <Route path='/company/*' element={<Company />} />
+          <Route path='/hotels/detail/:hotelId' element={<HotelDetail />} />
         </Routes>
       </Router>  
     </div>

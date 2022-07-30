@@ -1,4 +1,4 @@
-import "~/assets/css/layoutStyles/frontend/navbar.css"
+import "~/assets/css/layout/frontend/navbar.css"
 
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate} from "react-router-dom";
@@ -64,14 +64,14 @@ const Navbar = function(){
         )
     } else {
         AuthButtons = (
-            <li className="nav-item nav-user">
+            <li className="nav-item nav-user" style={{cursor: 'pointer'}}>
                 <div className="user-icon"><i className="fa-solid fa-user"></i></div>
                 <div className="down-icon"><i className="fa-solid fa-angle-down"></i></div>
                 <div className="drop-down">
                     <ul className="drop-down_list">
                         <li className="drop-down_item"><Link to={'#'}>Profile</Link></li>
                         <li className="drop-down_item"><Link to={'#'} onClick={handleSignout}>Sign out</Link></li>
-                        <li className="drop-down_item"><Link to={'#'}>Company</Link></li>
+                        <li className="drop-down_item"><Link to={'/company'}>Company</Link></li>
                     </ul>
                 </div>
             </li>
@@ -87,7 +87,7 @@ const Navbar = function(){
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                     <ul className="navbar-nav">
-                        <li className="nav-item">
+                        <li className="nav-item" style={{cursor: 'pointer'}}>
                             <Link className="nav-link active" aria-current="page" to="/" onClick={hanleClick}>Home</Link>
                         </li>
                         <li className="nav-item">

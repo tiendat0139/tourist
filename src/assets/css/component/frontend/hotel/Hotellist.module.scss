@@ -1,0 +1,95 @@
+@use '../Search.module.scss' as s;
+
+.hotel-item{
+    height: 184px;
+    background-color: #f6f6f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.1);
+    color: #000;
+    img{
+        height: 184px;
+        width: 100%;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+    .content{
+        padding: 10px 0px;
+        .cpn {
+            display: inline-block;
+            font-size: 14px;
+            padding: 0 6px 4px 6px; 
+            border-radius: 20px;
+            background-color: #d7eefb;
+            color: #0264c8;        
+       }
+        .hotel-local{
+            color: #666;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .vote{
+            padding: 10px 0;
+            display: flex;
+            justify-content: left;
+            .vote-star{
+                font-size: 12px;
+                color: s.$primary-color;
+                margin-left: 4px;
+            }
+        }
+        .disc{
+            background-color: s.$primary-color;
+            color: #fff;
+            padding: 2px 4px;
+        }
+        
+    }
+    .price{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        text-align: right;
+        padding: 10px;
+        border-left: 1px solid rgba($color: #000000, $alpha: 0.1);
+        .number{    
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            margin-bottom: 10px;
+            .old{
+                font-size: 18px;
+                text-decoration: line-through;
+                font-weight: 400;
+                color: #ddd;
+            }
+            .new{
+                font-size: 22px;
+                color: s.$primary-color;
+                font-weight: 600;
+            }
+            .price-text{
+                font-size: 12px;
+                font-weight: 500;
+            }
+        }
+        .view-detail{
+            display: block;
+            font-size: 16px;
+            text-align: center;
+            font-weight: 600;
+            text-decoration: none;
+            background-color: rgb(83, 146, 249);
+            border-radius: 4px;
+            box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.1);
+            color: #fff;
+            padding: 10px 0;
+            width: 100%;
+            &:hover{
+                opacity: .8;
+            }
+        }
+    }
+}

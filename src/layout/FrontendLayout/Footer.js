@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
-import "~/assets/css/layoutStyles/frontend/footer.css"
+import "~/assets/css/layout/frontend/footer.css"
 const Footer = function(){
     const [offset, setOffset] = useState(0);
     const handleScroll = (e) => {
